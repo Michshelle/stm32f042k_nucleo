@@ -1,0 +1,2 @@
+freertos.c:61:13:vApplicationMallocFailedHook	8	static
+freertos.c:77:6:vApplicationDaemonTaskStartupHook	8	static
