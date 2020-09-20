@@ -32,6 +32,12 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
+#define LEDn                               1
+
+#define LED3_PIN                           GPIO_PIN_3
+#define LED3_GPIO_PORT                     GPIOB
+#define LED3_GPIO_CLK_ENABLE()             __HAL_RCC_GPIOB_CLK_ENABLE()
+#define LED3_GPIO_CLK_DISABLE()            __HAL_RCC_GPIOB_CLK_DISABLE()
 static GPIO_InitTypeDef  GPIO_InitStruct;
 /* USER CODE END PD */
 
@@ -286,7 +292,7 @@ void BlinkySecond(void *argument)
   for(;;)
   {
 	HAL_GPIO_TogglePin(LED3_GPIO_PORT, LED3_PIN);
-    osDelay(600);
+    osDelay(950);
   }
   /* USER CODE END BlinkySecond */
 }

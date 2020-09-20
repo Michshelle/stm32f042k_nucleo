@@ -34,24 +34,24 @@ endif
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-freertos_stm32f042.elf \
+freertos_stm32f042k.elf \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-freertos_stm32f042.list \
+freertos_stm32f042k.list \
 
 OBJCOPY_BIN += \
-freertos_stm32f042.bin \
+freertos_stm32f042k.bin \
 
 
 # All Target
-all: freertos_stm32f042.elf secondary-outputs
+all: freertos_stm32f042k.elf secondary-outputs
 
 # Tool invocations
-freertos_stm32f042.elf: $(OBJS) $(USER_OBJS) /Users/shengyisong/STM32CubeIDE/workspace_1.4.0/freertos_stm32f042/STM32F042K6TX_FLASH.ld
-	arm-none-eabi-gcc -o "freertos_stm32f042.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/Users/shengyisong/STM32CubeIDE/workspace_1.4.0/freertos_stm32f042/STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="freertos_stm32f042.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+freertos_stm32f042k.elf: $(OBJS) $(USER_OBJS) /Users/shengyisong/STM32CubeIDE/workspace_1.4.0/freertos_stm32f042k/STM32F042K6TX_FLASH.ld
+	arm-none-eabi-gcc -o "freertos_stm32f042k.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0 -T"/Users/shengyisong/STM32CubeIDE/workspace_1.4.0/freertos_stm32f042k/STM32F042K6TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="freertos_stm32f042k.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -60,13 +60,13 @@ default.size.stdout: $(EXECUTABLES)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-freertos_stm32f042.list: $(EXECUTABLES)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "freertos_stm32f042.list"
+freertos_stm32f042k.list: $(EXECUTABLES)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "freertos_stm32f042k.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
-freertos_stm32f042.bin: $(EXECUTABLES)
-	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "freertos_stm32f042.bin"
+freertos_stm32f042k.bin: $(EXECUTABLES)
+	arm-none-eabi-objcopy  -O binary $(EXECUTABLES) "freertos_stm32f042k.bin"
 	@echo 'Finished building: $@'
 	@echo ' '
 
