@@ -302,6 +302,7 @@ int main(void)
  800025a:	607b      	str	r3, [r7, #4]
  800025c:	687b      	ldr	r3, [r7, #4]
 
+
   /* -2- Configure IO in output push-pull mode to drive external LEDs */
   GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
  800025e:	4b17      	ldr	r3, [pc, #92]	; (80002bc <main+0x88>)

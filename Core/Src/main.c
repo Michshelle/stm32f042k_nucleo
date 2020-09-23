@@ -33,7 +33,6 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 #define LEDn                               1
-
 #define LED3_PIN                           GPIO_PIN_3
 #define LED3_GPIO_PORT                     GPIOB
 #define LED3_GPIO_CLK_ENABLE()             __HAL_RCC_GPIOB_CLK_ENABLE()
@@ -54,14 +53,14 @@ osThreadId_t blinky1Handle;
 const osThreadAttr_t blinky1_attributes = {
   .name = "blinky1",
   .priority = (osPriority_t) osPriorityNormal,
-  .stack_size = 128 * 4
+  .stack_size = 128
 };
 /* Definitions for myTask02 */
 osThreadId_t myTask02Handle;
 const osThreadAttr_t myTask02_attributes = {
   .name = "myTask02",
   .priority = (osPriority_t) osPriorityBelowNormal,
-  .stack_size = 128 * 4
+  .stack_size = 128
 };
 /* USER CODE BEGIN PV */
 
@@ -80,7 +79,6 @@ void BlinkySecond(void *argument);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
 
 /* USER CODE END 0 */
 
@@ -109,6 +107,7 @@ int main(void)
   /* USER CODE BEGIN SysInit */
   /* -1- Enable GPIO Clock (to be able to program the configuration registers) */
   LED3_GPIO_CLK_ENABLE();
+
 
   /* -2- Configure IO in output push-pull mode to drive external LEDs */
   GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
