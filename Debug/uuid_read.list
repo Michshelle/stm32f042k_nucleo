@@ -529,7 +529,7 @@ void printUUID(void) {
 	uint8_t buf[32];
 	char str[32];
 
-	for( int a = 0; a < 3; a = a + 1 )
+	for( int a = 0; a < 3; a++ )
  80003a2:	2300      	movs	r3, #0
  80003a4:	647b      	str	r3, [r7, #68]	; 0x44
  80003a6:	e025      	b.n	80003f4 <printUUID+0x58>
@@ -569,7 +569,7 @@ void printUUID(void) {
 		HAL_Delay(200);
  80003e8:	20c8      	movs	r0, #200	; 0xc8
  80003ea:	f000 f985 	bl	80006f8 <HAL_Delay>
-	for( int a = 0; a < 3; a = a + 1 )
+	for( int a = 0; a < 3; a++ )
  80003ee:	6c7b      	ldr	r3, [r7, #68]	; 0x44
  80003f0:	3301      	adds	r3, #1
  80003f2:	647b      	str	r3, [r7, #68]	; 0x44

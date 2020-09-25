@@ -199,7 +199,7 @@ void printUUID(void) {
 	uint8_t buf[32];
 	char str[32];
 
-	for( int a = 0; a < 3; a = a + 1 )
+	for( int a = 0; a < 3; a++ )
 	{
 		uint32_t idPart = STM32_UUID[a];
 		sprintf(str,"%lX",idPart);
