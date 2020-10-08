@@ -1,0 +1,8 @@
+main_rng.c:103:5:main	40	static
+main_rng.c:200:6:SystemClock_Config	88	static
+main_rng.c:235:13:MX_CRC_Init	8	static
+main_rng.c:265:13:MX_USART2_UART_Init	8	static
+main_rng.c:300:13:MX_GPIO_Init	16	static
+main_rng.c:310:13:Led_Config	16	static
+main_rng.c:329:13:Led_Toggle	16	static
+main_rng.c:350:6:Error_Handler	8	static
